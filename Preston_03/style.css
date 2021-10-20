@@ -1,0 +1,45 @@
+#container {
+    width:1000px;
+    margin:auto;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#header {
+    position:relative;
+    width:1000px;
+    height:60px;
+    background-color:rgb(61, 60, 60);
+    color:white;
+    
+    
+}
+
+#header-title {
+    position:absolute;
+    margin-left:30px;
+    margin-top:10px;
+}
+
+#nav-bar {
+    width:1000px;
+    height:40px;
+    background-color: rgb(61, 60, 60);
+    color:white;
+    margin-top:10px;
+
+}
+
+.btn {
+    width:80px;
+    height:30px;
+    background-color:rgb(134, 133, 133);
+    color:white;
+    text-decoration: none;
+    font-weight:bold;
+    font-size:14px;
+    text-align:center;
+    line-height:30px;
+    margin-right:70px;
+    margin-top:5px;
+    float:left;
+}
