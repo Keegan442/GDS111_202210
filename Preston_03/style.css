@@ -2,6 +2,12 @@
     width:1000px;
     margin:auto;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+div {
+    border-radius: 10px;
+    
 }
 
 #header {
@@ -154,9 +160,26 @@
     height:350px;
     border:1px solid black;
     opacity:40%;
-
-    
 }
 
+.questions {
+    border:1px solid black;
+    width:1000px;
+    height:100px;
+    background-color: rgb(116, 113, 113);
+}
+
+#riddle-content {
+    position:realtive;
+    width:1000px;
+    height:750px;
+    background-color:rgb(61, 60, 60);
+    margin-top:10px;
+    color:white;
+}
+
+.question-text {
+    padding-left:10px;
+}
 
 
