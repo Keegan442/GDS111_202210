@@ -76,6 +76,7 @@ div {
     background-color:rgb(156, 155, 155);
     margin-left:10px;
     top:150px;
+    border:1px solid black;
 }
 
 .section-title {
@@ -93,20 +94,23 @@ div {
     margin-right:10px;
     /*border: 1px solid red;*/
     top:150px;
+    border:1px solid black;
 }
 
 #Bio {
     width:620px;
     height:30px;
     padding-left:10px;
-    
+    color:white;
+    border:1px solid black;
 }
 
 #Hobbies {
     width:270px;
     height:30px;
     padding-left:10px;
-
+    color:white;
+    border:1px solid black;
 }
 
 #text {
@@ -117,6 +121,7 @@ div {
     font-size:large;
     padding-left:10px;
     padding-top:10px;
+    border:1px solid black;
 }
 
 #footer {
@@ -127,6 +132,16 @@ div {
     color:white;
     text-align:center;
     margin-top:10px;
+}
+
+#riddles-footer {
+    position:relative;
+    width:1000px;
+    height:40px;
+    background-color:rgb(61, 60, 60);
+    color:white;
+    text-align:center;
+    margin-top:25px;
 }
 
 #footer-text {
@@ -153,6 +168,17 @@ div {
     width:270px;
     height:30px;
     padding-left:10px;
+    color:white;
+    border:1px solid black;
+}
+
+#Riddles {
+    width:150px;
+    height:30px;
+    padding-left:10px;
+    position:relative;
+    top:10px;
+    border:1px solid black;
 }
 
 #img {
@@ -181,5 +207,6 @@ div {
 .question-text {
     padding-left:10px;
 }
+
 
 
