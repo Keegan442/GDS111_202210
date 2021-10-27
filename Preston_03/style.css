@@ -1,3 +1,8 @@
+body {
+    background-image:url(images/bg3.jpg);
+    
+}
+
 #container {
     width:1000px;
     margin:auto;
@@ -16,7 +21,8 @@ div {
     height:60px;
     background-color:rgb(61, 60, 60);
     color:white;
-    
+    border:1px solid black;
+    background-image:url(images/bg4.jpg);
     
 }
 
@@ -32,7 +38,8 @@ div {
     background-color: rgb(61, 60, 60);
     color:white;
     margin-top:10px;
-
+    border:1px solid black;
+    background-image:url(images/bg4.jpg);
 }
 
 .btn {
@@ -67,6 +74,8 @@ div {
     height:350px;
     background-color:rgb(61, 60, 60);
     margin-top:10px;
+    border:1px solid black;
+    background-image:url(images/bg4.jpg);
 }
 
 .bio-section {
@@ -132,6 +141,8 @@ div {
     color:white;
     text-align:center;
     margin-top:10px;
+    border:1px solid black;
+    background-image:url(images/bg4.jpg);
 }
 
 #riddles-footer {
@@ -142,6 +153,8 @@ div {
     color:white;
     text-align:center;
     margin-top:10px;
+    border:1px solid black;
+    background-image:url(images/bg4.jpg);
 }
 
 #footer-text {
@@ -162,6 +175,7 @@ div {
     top:150px;
     border:1px solid black;
     z-index: 1;
+    
 }
 
 #Schooling {
@@ -185,7 +199,7 @@ div {
     width:1000px;
     height:350px;
     border:1px solid black;
-    opacity:40%;
+    opacity:70%;
 }
 
 .questions {
@@ -199,15 +213,18 @@ div {
 #riddle-content {
     position:realtive;
     width:1000px;
-    height:850px;
+    height:1200px;
     background-color:rgb(61, 60, 60);
     margin-top:10px;
     color:white;
+    background-image:url(images/bg4.jpg);
 }
 
 .question-text {
     padding-left:10px;
 }
+
+
 
 
 

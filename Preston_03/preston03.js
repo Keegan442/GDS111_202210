@@ -7,13 +7,16 @@
 //each variable will store the answer to a riddle question
 //JS requires vars to be declared as such
 
-var store1 = "Nothing!" //answer to question 1
-var store2 = "The Post Office!" //answer to question 2
+var store1 = "Nothing" //answer to question 1
+var store2 = "The Post Office" //answer to question 2
 var store3 = "NOON" //answer to question 3
 var store4 = "Time to fix the fence" //answer to question 4
 var store5 = "An umbrella" //answer to question 5
 var store6 = "Your left hand" //answer to question 6
 var store7 = "A cold" //answer to question 7
+var store8 = "A comb" //answer to question 8
+var store9 = "A potato" //answer to question 9
+var store10 = "A stamp" //answer to question 10
 
 
 //***VARIABLE NAMES MUST BE UNIQUE! They are also cAsE sEnSiTiVe
@@ -57,4 +60,19 @@ function answer6() {
 function answer7() {
 
     document.getElementById("question7").innerHTML = store7;
+}
+
+function answer8() {
+
+    document.getElementById("question8").innerHTML = store8;
+}
+
+function answer9() {
+
+    document.getElementById("question9").innerHTML = store9;
+}
+
+function answer10() {
+
+    document.getElementById("question10").innerHTML = store10;
 }
