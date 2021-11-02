@@ -1,0 +1,9 @@
+/*stylesheet for six shooter game*/
+
+/*HEADER---------------------------------*/
+
+#wrapper{
+    border:1px solid red;
+    width:1000px;
+    margin:auto;
+}
