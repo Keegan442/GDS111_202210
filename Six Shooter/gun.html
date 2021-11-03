@@ -5,8 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Six Shooter | Game</title>
+    <script type="text/javascript" src="game.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body onload="updatescreen();">
+   
+   
+    <div id="wrapper">
+        <header>
+            <h1 id="Main-Header">Six Shooter</h1>
+
+        </header>
+
+        <div id="target-space">
+
+        </div><!--/ #target-space-->
+
+        <div id="content">
+
+            <div id="ammo">
+
+                
+                
+                <!--ammo cache-->
+                <div id="total-ammo"></div>
+
+            
+                <!--current ammo-->
+                <div id="current-ammo"></div>
+
+                <p id="total">Total Ammo</p>
+                <p id="current">Current Ammo</p>
+
+            </div><!--/ #ammo-->
+
+            <div id="buttons">
+
+                <form>
+
+                    <p class="btns" id="shoot-btn"><!--shoot button-->
+                        <input type="button" value="SHOOT" class="shoot" onclick="shoot();"/>
+                    </p>
+
+                    <p class="btns" id="reload-btn"><!--reload button-->
+                        <input type="button" value="RELOAD" class="reload" onclick="reload();"/>
+                    </p>
+                </form>
+
+            </div><!--/ #buttons-->
+
+        </div><!--/ #content-->
+
+        <div id="footer">
+
+            <footer>
+                <p class="copy">&copy; 2021 | HTML & Javascript | K PRESTON</p>
+            </footer>
+
+        </div><!--/ #footer-->
+
+        <!--HTML 5 AUDIO PLAYERS GO BELOW THIS LINE BUT INSIDE OF THE BODY! [yes, sound :D]-->
+
+    <audio id="gun" src="sounds/Shoot2.mp3">
+        <p>Your browser sucks and doesn't know HTML5.</p>
+    </audio>
+
+    <audio id="reload" src="sounds/Reload2.mp3">
+        <p>Your browser sucks and doesn't know HTML5.</p>
+    </audio>
+  
+    </div><!--/ #wrapper-->
     
 </body>
 </html>

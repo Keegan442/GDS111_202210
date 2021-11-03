@@ -1,9 +1,130 @@
 /*stylesheet for six shooter game*/
 
-/*HEADER---------------------------------*/
+
+
 
 #wrapper{
-    border:1px solid red;
-    width:1000px;
+    width:910px;
     margin:auto;
+    height:450px;
+    border:2px solid red;
 }
+
+div{
+    border:1px solid red;
+}
+
+header{
+    border:1px solid red;
+}
+
+#Main-Header{
+    text-align:center;
+    font-weight:bold;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:50px;
+}
+
+.btn{
+    width:200px;
+    height:100px;
+    background-color:rgb(255, 0, 0);
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:20px;
+    text-align:center;
+    line-height:30px;
+    padding:30px;
+    border:1px solid black;
+    border-radius:20px;
+}
+
+.btn:hover{
+    background-color:rgb(223, 96, 96);
+    border:1px solid black;
+}
+
+#button{
+    margin-left:350px;
+    margin-top:130px;
+}
+
+#ammo{
+    width:430px;
+    height:90px;
+    float:left;
+    font-size:40px;
+}
+
+#buttons{
+    width:430px;
+    height:90px;
+    float:right;
+}
+
+#content{
+    position:absolute;
+    width:890px;
+    height:90px;
+    margin-top:210px;
+    padding:10px;
+}
+
+#total-ammo{
+    position:relative;
+    width:50px;
+    height:50px;
+    text-align:center;
+    margin-left:10px;
+    margin-top:10px;
+    top:5px;
+}
+
+#current-ammo{
+    position:relative;
+    width:50px;
+    height:50px;
+    text-align:center;
+    margin-left:95px;
+    bottom:47px;
+}
+
+#total{
+    position:relative;
+    font-size:15px;
+    bottom:60px;
+    left:10px;
+}
+
+#current{
+    position:relative;
+    font-size:15px;
+    bottom:92px;
+    left:95px;
+}
+
+form{
+    margin-left:10px;
+    
+}
+
+#reload-btn{
+    position:relative;
+    left:75px;
+    bottom:20px;
+}
+
+#shoot-btn{
+    position:relative;
+    top:17px;
+}
+
+#footer{
+    margin-top:350px;
+}
+
+
+
+
+
