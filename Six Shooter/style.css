@@ -6,16 +6,16 @@
 #wrapper{
     width:910px;
     margin:auto;
-    height:450px;
+    height:810px;
     border:2px solid red;
 }
 
 div{
-    border:1px solid red;
+    
 }
 
 header{
-    border:1px solid red;
+   
 }
 
 #Main-Header{
@@ -23,6 +23,7 @@ header{
     font-weight:bold;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size:50px;
+    border-bottom:2px solid black;
 }
 
 .btn{
@@ -55,19 +56,21 @@ header{
     height:90px;
     float:left;
     font-size:40px;
+    border:2px solid red;
 }
 
 #buttons{
     width:430px;
     height:90px;
     float:right;
+    border:2px solid red;
 }
 
 #content{
     position:absolute;
     width:890px;
     height:90px;
-    margin-top:210px;
+    margin-top:20px;
     padding:10px;
 }
 
@@ -121,7 +124,21 @@ form{
 }
 
 #footer{
-    margin-top:350px;
+    margin-top:150px;
+    font-size:small;
+    text-align:center;
+}
+
+img{
+    width:800px;
+    height:500px;
+    margin-left:50px;
+    border:2px solid black;
+}
+
+#target-space{
+    border-bottom:2px solid black;
+    padding-bottom:10px;
 }
 
 
