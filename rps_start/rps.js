@@ -17,6 +17,19 @@ pics2[0] = "images/rock2.jpg"
 pics2[1] = "images/paper2.jpg"
 pics2[2] = "images/scissors2.jpg"
 
+//create an array holding our button elements
+//document.querySelectorAll grabs all of one element type
+var btn = document.querySelectorAll("button")
+
+//check your stored data in the console!
+console.log(btn) //used for testing, requires the dev tools to be open
+
+//make the buttons clickable and runnable ALSO for the game
+//add event listeners to each button
+btn[0].addEventListener("click", function (e) { play(0) })
+btn[1].addEventListener("click", function (e) { play(1) })
+btn[2].addEventListener("click", function (e) { play(2) })
+
 //arrays that store the player & computer options (one array for each)
 //Player ID = pId
 var pId = new Array("rock_p", "paper_p", "scissors_p") 
@@ -36,6 +49,8 @@ function swap(id, image) {
 function play(id) {
 
     //setting up the stored image paths (src) in JS to match the HTML ones
+    //swap() CALLS the function --> this gets its code to run!
+    //values supplied inside of () are passed into the parameter variables
     swap(pId[0], pics[0])
     swap(pId[1], pics[1])
     swap(pId[2], pics[2])
@@ -65,13 +80,22 @@ function play(id) {
 
             //alert the user that there has been a draw
             alert("Bloody hell let's call it a DRAW!")
+            
+            //call showResults() and pass correct values for: pChoice, cChoice, Results
+            showResults("Rock!", "Rock!", "Draw!")
         }
         else if (c_choice == 1){
 
             alert("You LOST to the computer!")
+
+            //call showResults() and pass correct values for: pChoice, cChoice, Results
+            showResults("Rock!", "Paper!", "You LOST! :(")
         }
         else {
             alert("You WIN with your ROCK!")
+
+            //call showResults() and pass correct values for: pChoice, cChoice, Results
+            showResults("Rock!", "Scissors!", "You WON with ROCK! :)")
         }
 
         break
@@ -82,13 +106,22 @@ function play(id) {
 
                 //alert the user that there has been a draw
                 alert("Bloody hell let's call it a DRAW!")
+
+                //call showResults() and pass correct values for: pChoice, cChoice, Results
+                showResults("Paper!", "Paper!", "Draw!")
             }
             else if (c_choice == 2){
     
                 alert("You LOST to the computer!")
+
+                //call showResults() and pass correct values for: pChoice, cChoice, Results
+                showResults("Paper!", "Scissors!", "You LOST! :(")
             }
             else {
                 alert("You WIN with your PAPER!")
+
+                //call showResults() and pass correct values for: pChoice, cChoice, Results
+                showResults("Paper!", "Rock!", "You WON with PAPER! :)")
             }
     
             break
@@ -99,16 +132,35 @@ function play(id) {
 
                 //alert the user that there has been a draw
                 alert("Bloody hell let's call it a DRAW!")
+
+                //call showResults() and pass correct values for: pChoice, cChoice, Results
+                showResults("Scissors!", "Scissors!", "Draw!")
             }
             else if (c_choice == 0){
     
                 alert("You LOST to the computer!")
+
+                 //call showResults() and pass correct values for: pChoice, cChoice, Results
+                 showResults("Scissors!", "Rock!", "You LOST! :(")
             }
             else {
                 alert("You WIN with your SCISSORS!")
+
+                 //call showResults() and pass correct values for: pChoice, cChoice, Results
+                 showResults("Scissors!", "Paper!", "You WON with SCISSORS! :)")
             }
     
             break
-    }
+    }//end swith statement
+
+}//play() CLOSE
+
+
+//function that writes the results back to the HTML page
+function showResults(pChoice, cChoice, results) {
+
+    document.getElementById("pChoice").innerHTML = pChoice
+    document.getElementById("cChoice").innerHTML = cChoice
+    document.getElementById("results").innerHTML = results
 
 }
