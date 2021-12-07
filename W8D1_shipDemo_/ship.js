@@ -58,7 +58,7 @@ function Ship() {
         //IMAGE AS THE SHIP (X-WING)
         
         var imageObj = new Image()
-        imageObj.src = "images/wutface.png" //PNG FOR TRANSPARENCY!
+        imageObj.src = "images/xwing.png" //PNG FOR TRANSPARENCY!
 
         //save the current state of the canvas
         context.save()
@@ -69,7 +69,7 @@ function Ship() {
         //draw the image to the canvas context
         //drawImage(image, x coord of top left corner, y coord of the top left corner, wdith of image, height of image)
         //RESOURCE: https://www.w3schools.com/tags/canvas_drawimage.asp
-        context.drawImage(imageObj, -50, -50, 100, 100)
+        context.drawImage(imageObj, -50, -50, 100, 50)
         context.restore()
 
     }//Ship.draw()
