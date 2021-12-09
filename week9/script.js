@@ -2,7 +2,7 @@
 
 //set up starting elements (necessary)
 //these are GLOBAL values and will be accessible to EVERY fucntion in the file!
-var c = document.querySelector('canvas') //grabs elemtn type instead of ID
+var c = document.querySelector('canvas') //grabs element type instead of ID
 
 //var c = document.getElementById("#canvas")
 var context = c.getContext("2d")
@@ -29,8 +29,8 @@ function randomRange(high, low) {
 //function/Class for the Asteroids!
 function Asteroid() {
 
-    this.radius = randomRange(10, 2)
-    this.x = randomRange(c.width - this.radius, 0 + this.radius) - c.width
+    this.radius = randomRange(2, 10)
+    this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width
     this.y = randomRange(c.height - this.radius, 0 + this.radius) //- c.height
     this.vx = randomRange(-5, -10) //horizontal velocity
     this.vy = randomRange(10, 5) //vertical velocity
@@ -40,7 +40,7 @@ function Asteroid() {
         context.save()
         context.beginPath()
         context.fillStyle = this.color
-        context.arc(this.y, this.x, this.radius, 0, 2*Math.PI, true)
+        context.arc(this.x, this.y, this.radius, 0, 2*Math.PI, true)
         context.closePath()
         context.fill()
         context.restore()
@@ -291,11 +291,11 @@ gameStates[1] = function() {//GAMEPLAY STATE
         if(asteroids[i].x > c.width + asteroids[i].radius) {
             //reset astroids position
             asteroids[i].y = randomRange(c.height - asteroids[i].radius, 0 + asteroids[i].radius) //- c.height
-            asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius) - c.width
+            asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius) + c.width
         }
 
         if(gameOver == false) {
-            asteroids[i].y += asteroids[i].vy
+            asteroids[i].x += asteroids[i].vx
         }
         asteroids[i].draw()
     }
