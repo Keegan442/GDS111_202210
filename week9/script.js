@@ -81,7 +81,7 @@ function PlayerShip() {
     this.left = false
     this.right = false
 
-    this.flamelength = 30
+    this.flamelength = -50
 
     //DRAW THE SHIP AND FLAME
     this.draw = function() {
@@ -92,14 +92,24 @@ function PlayerShip() {
         if(this.up == true) {
             context.save()
             //adjust flame length for the flicker effect
-            if(this.flamelength == 30) {
-                this.flamelength = 10
+            if(this.flamelength == -50) {
+                this.flamelength = -80
             }
             else {
-                this.flamelength = 30
+                this.flamelength = -50
             }
-
+            
             context.fillStyle = "orange" //flame color
+            context.beginPath()
+            context.moveTo(this.flamelength, 0)
+            context.lineTo(-26, -10)
+            context.lineTo(-26, -5)
+            context.lineTo(this.flamelength, 0)
+            context.closePath()
+            context.fill()
+            context.restore()
+            
+            /*context.fillStyle = "orange" //flame color
             context.beginPath()
             context.moveTo(0, this.flamelength)
             context.lineTo(5, 5)
@@ -107,19 +117,28 @@ function PlayerShip() {
             context.lineTo(0, this.flamelength)
             context.closePath()
             context.fill()
-            context.restore()
+            context.restore()*/
         }
 
         context.beginPath()
 
         context.fillStyle = "blue"
         context.moveTo(0, -13)
+        context.lineTo(-26, -25)
+        context.lineTo(-26, 1)
+        context.lineTo(0, -13)
+        context.closePath()
+        context.fill()
+        context.restore()
+
+        /*context.fillStyle = "blue"
+        context.moveTo(0, -13)
         context.lineTo(10, 10)
         context.lineTo(-10, 10)
         context.lineTo(0, -13)
         context.closePath()
         context.fill()
-        context.restore()
+        context.restore()*/
     }
 
     this.move = function () {
@@ -171,13 +190,13 @@ document.addEventListener("keyup", keyPressUp)
 function keyPressDown(e) {
 
     //console.log("Key Down" + e.keycode) //tells you the keycodes!
-    if(e.keyCode === 38) {
+    if(e.keyCode === 39) {//right arrow key
         ship.up = true
     }
-    if(e.keyCode === 37) {
+    if(e.keyCode === 40) {//down arrow key
         ship.left = true
     }
-    if(e.keyCode === 39) {
+    if(e.keyCode === 38) {//up arrow key
         ship.right = true
     }
     //not coding for down because ship don't go that way
@@ -189,13 +208,13 @@ function keyPressUp(e) {
     //console.log("Key Up" + e.keycode) //tells you the keycodes!
 
     if(gameOver == false){
-        if(e.keyCode === 38) {
+        if(e.keyCode === 39) {
             ship.up = false
         }
-        if(e.keyCode === 37) {
+        if(e.keyCode === 40) {
             ship.left = false
         }
-        if(e.keyCode === 39) {
+        if(e.keyCode === 38) {
             ship.right = false
         }
         //not coding for down because ship don't go that way
@@ -254,20 +273,20 @@ gameStates[1] = function() {//GAMEPLAY STATE
     //W9D2 show... gravity stuff ---------------------------
 
     if(ship.up == true){
-        ship.vy = -10
+        ship.vx = 10
     }
     else {
-        ship.vy = 3
+        ship.vx = -3
     }
 
     if(ship.left == true){
-        ship.vx = -3
+        ship.vy = 3
     }
     else if(ship.right == true){
-        ship.vx = 3
+        ship.vy = -3
     }
     else{
-        ship.vx = 0
+        ship.vy = 0
     }
 
 
