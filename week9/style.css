@@ -1,6 +1,29 @@
 /*Stylesheet for final ship project*/
+body{
+    background-image: url(images/BG.jpg);
+
+}
 #container{
     margin: 20px auto;
+    width:820px;
+	height:700px;
+    background-color: darkgrey;
+}
+h1{
+    margin-left: 250px;
     width:800px;
-	height:800px;
-} 
+    height:50px;
+    margin-bottom: 0px;
+}
+h5{
+    margin-top:10px;
+    margin-left: 300px;
+    width:800px;
+    height:50px;
+}
+#canvas{
+    margin-left:5px;
+    width:802px;
+    height:601px;
+    border:2px solid darkslategray;
+}

@@ -81,7 +81,7 @@ function PlayerShip() {
     this.left = false
     this.right = false
 
-    this.flamelength = -50
+    this.flamelength = -40
 
     //DRAW THE SHIP AND FLAME
     this.draw = function() {
@@ -92,34 +92,38 @@ function PlayerShip() {
         if(this.up == true) {
             context.save()
             //adjust flame length for the flicker effect
-            if(this.flamelength == -50) {
-                this.flamelength = -80
+            if(this.flamelength == -40) {
+                this.flamelength = -50
             }
             else {
-                this.flamelength = -50
+                this.flamelength = -40
             }
             
             context.fillStyle = "orange" //flame color
             context.beginPath()
-            context.moveTo(this.flamelength, 0)
-            context.lineTo(-26, -10)
-            context.lineTo(-26, -5)
-            context.lineTo(this.flamelength, 0)
+            context.moveTo(this.flamelength, -9)
+            context.lineTo(-25, -24)
+            context.lineTo(-25, 0)
+            context.lineTo(this.flamelength, -9)
             context.closePath()
             context.fill()
             context.restore()
             
-            /*context.fillStyle = "orange" //flame color
-            context.beginPath()
-            context.moveTo(0, this.flamelength)
-            context.lineTo(5, 5)
-            context.lineTo(-5, 5)
-            context.lineTo(0, this.flamelength)
-            context.closePath()
-            context.fill()
-            context.restore()*/
+        
         }
 
+        /*this.drawShip = function() {
+            var imageObj = new Image()
+            imageObj.src = "images/Ship.png"
+            context.save()
+
+            //move the point of origin 0,0 to the ship's starting x and y coords
+            context.translate(this.x, this.y)
+            //drawImage(image, x coord of top left corner, y coord of the top left corner, wdith of image, height of image)
+            context.drawImage(imageObj, -13, -13, this.w, this.h)
+        }*/
+
+        
         context.beginPath()
 
         context.fillStyle = "blue"
@@ -131,14 +135,7 @@ function PlayerShip() {
         context.fill()
         context.restore()
 
-        /*context.fillStyle = "blue"
-        context.moveTo(0, -13)
-        context.lineTo(10, 10)
-        context.lineTo(-10, 10)
-        context.lineTo(0, -13)
-        context.closePath()
-        context.fill()
-        context.restore()*/
+
     }
 
     this.move = function () {
