@@ -9,14 +9,26 @@ var context = c.getContext("2d")
 var timer = requestAnimationFrame(main)
 var gravity = 1
 var asteroids = new Array()
+var powerUps = new Array()
 var numAsteroids = 10
+var numPowerups = 1
 var gameOver = true
+var invincible = false
 var score = 0
 
 
 var gameStates = []
 var currentState = 0
 var ship
+
+//IMAGE SPRITES FOR GAME
+var shipSprite = new Image()
+shipSprite.src = "images/Ship.png"
+shipSprite.onload = function(){}
+
+var asteroidSprite = new Image()
+asteroidSprite.src = "images/asteroid.png"
+asteroidSprite.onload = function(){}
 
 
 //random value generator function
@@ -29,10 +41,37 @@ function randomRange(high, low) {
 //function/Class for the Asteroids!
 function Asteroid() {
 
-    this.radius = randomRange(2, 10)
+    this.radius = randomRange(10, 25)
     this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width
     this.y = randomRange(c.height - this.radius, 0 + this.radius) //- c.height
     this.vx = randomRange(-5, -10) //horizontal velocity
+    this.vy = randomRange(10, 5) //vertical velocity
+    this.color = "orange"
+
+    this.draw = function () {
+        /*context.save()
+        context.beginPath()
+        context.fillStyle = this.color
+        context.arc(this.x, this.y, this.radius, 0, 2*Math.PI, true)
+        context.closePath()
+        context.fill()
+        context.restore()*/
+        context.fillStyle = this.color
+        context.drawImage(asteroidSprite, this.x, this.y, this.radius, this.radius)
+        console.log("shipSprite drawImage()")
+        
+        context.restore()
+    }
+
+}//Asteroids() CLOSE
+
+//function for the power-up
+function PowerUp() {
+
+    this.radius = randomRange(8, 8)
+    this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width
+    this.y = randomRange(c.height - this.radius, 0 + this.radius) //- c.height
+    this.vx = randomRange(-4, -5) //horizontal velocity
     this.vy = randomRange(10, 5) //vertical velocity
     this.color = "orange"
 
@@ -44,6 +83,11 @@ function Asteroid() {
         context.closePath()
         context.fill()
         context.restore()
+        /*context.fillStyle = this.color
+        context.drawImage(asteroidSprite, this.x, this.y, this.radius, this.radius)
+        console.log("shipSprite drawImage()")
+        
+        context.restore()*/
     }
 
 }//Asteroids() CLOSE
@@ -55,13 +99,15 @@ function gameStart() {
         //i is the INDEX of the Array, this is a LOOP that runs while i is less than the value stored to numAsteroids, i++ means i grows +1 each time through the loop
 
 
-        asteroids[i] = new Asteroid()
+        //asteroids[i] = new Asteroid()
         //each time through the loop, a new asteroid is created and saved in the asteroid array!
+        
 
         //create the instance of the ship for the game
         ship = new PlayerShip()
 
     }
+   
 }//gameStart() CLOSE
 
 //function for the PLAYER'S SHIP
@@ -101,10 +147,10 @@ function PlayerShip() {
             
             context.fillStyle = "orange" //flame color
             context.beginPath()
-            context.moveTo(this.flamelength, -9)
-            context.lineTo(-25, -24)
-            context.lineTo(-25, 0)
-            context.lineTo(this.flamelength, -9)
+            context.moveTo(this.flamelength, 1)
+            context.lineTo(-25, 3)
+            context.lineTo(-25, -1)
+            context.lineTo(this.flamelength, 1)
             context.closePath()
             context.fill()
             context.restore()
@@ -112,19 +158,9 @@ function PlayerShip() {
         
         }
 
-        /*this.drawShip = function() {
-            var imageObj = new Image()
-            imageObj.src = "images/Ship.png"
-            context.save()
-
-            //move the point of origin 0,0 to the ship's starting x and y coords
-            context.translate(this.x, this.y)
-            //drawImage(image, x coord of top left corner, y coord of the top left corner, wdith of image, height of image)
-            context.drawImage(imageObj, -13, -13, this.w, this.h)
-        }*/
-
+        context.fillStyle = "red" //ship color
         
-        context.beginPath()
+        /*context.beginPath()
 
         context.fillStyle = "blue"
         context.moveTo(0, -13)
@@ -133,8 +169,11 @@ function PlayerShip() {
         context.lineTo(0, -13)
         context.closePath()
         context.fill()
+        context.restore()*/
+        context.drawImage(shipSprite, -20, -20, 40, 40)
+        console.log("shipSprite drawImage()")
+        
         context.restore()
-
 
     }
 
@@ -224,6 +263,8 @@ function keyPressUp(e) {
             if(currentState == 2) {
                 score = 0
                 numAsteroids = 10
+                numPowerups = 0
+                powerUps = []
                 asteroids = []
                 gameStart()
 
@@ -286,6 +327,14 @@ gameStates[1] = function() {//GAMEPLAY STATE
         ship.vy = 0
     }
 
+    if(invincible == true){
+
+        setTimeout(function(){
+            invincible = false
+        }, 5000)
+
+    }
+
 
     for(var i = 0; i < asteroids.length; i++) {
         //using the distance formula to find the distance between ship and asteroid
@@ -294,7 +343,7 @@ gameStates[1] = function() {//GAMEPLAY STATE
         var dist = Math.sqrt((dX*dX) + (dY*dY))
 
         //check for collision and if so end game
-        if(detectCollision(dist, (ship.h/2 + asteroids[i].radius))) {
+        if(detectCollision(dist, (ship.h/2 + asteroids[i].radius)) && invincible == false) {
             //console.log("secret stuff for W9D2")
             gameOver = true
             currentState = 2 //this replaces removeEventListener need
@@ -316,6 +365,39 @@ gameStates[1] = function() {//GAMEPLAY STATE
         asteroids[i].draw()
     }
 
+    for(var i = 0; i < powerUps.length; i++) {
+        //using the distance formula to find the distance between ship and asteroid
+        var dX = ship.x - powerUps[i].x
+        var dY = ship.y - powerUps[i].y
+        var dist = Math.sqrt((dX*dX) + (dY*dY))
+
+        //check for collision and if so end game
+        if(detectCollision(dist, (ship.h/2 + powerUps[i].radius))) {
+            //console.log("secret stuff for W9D2")
+            console.log("WORKS!!!")
+            invincible = true
+             //this replaces removeEventListener need
+
+            //document.removeEventListener("keydown", keyPressDown)
+            //document.removeEventListener("keyup", keyPressUp)
+        }
+
+        //checks to see if asteroids is offscreen
+        if(powerUps[i].x > c.width + powerUps[i].radius) {
+            //reset astroids position
+            powerUps[i].y = randomRange(c.height - powerUps[i].radius, 0 + powerUps[i].radius) //- c.height
+            powerUps[i].x = randomRange(c.width - powerUps[i].radius, 0 + powerUps[i].radius) + c.width
+        }
+
+        if(gameOver == false) {
+            powerUps[i].x += powerUps[i].vx
+        }
+        if(invincible == false){
+            powerUps[i].draw()
+        }
+        
+    }
+
     ship.draw()
     if(gameOver == false) {
         ship.move()
@@ -324,6 +406,11 @@ gameStates[1] = function() {//GAMEPLAY STATE
     while(asteroids.length < numAsteroids) {
         //add a new asteroid to the array!
         asteroids.push(new Asteroid())
+    }
+
+    while(powerUps.length < numPowerups) {
+        //add a new asteroid to the array!
+        powerUps.push(new PowerUp())
     }
 
 
@@ -359,10 +446,17 @@ function main() {
 function scoreTimer() {
     if(gameOver == false) {
         score++ //adds +1 to the game score on screen
-        if(score % 5 == 0) {//if score / 5 has a remainder of 0
+        if(score % 2 == 0) {//if score / 2 has a remainder of 0
 
-            numAsteroids += 5 //add MORE asteroids (level up!)
+            
+            numAsteroids += 15 //add MORE asteroids (level up!)
             console.log(numAsteroids)
+        }
+        if(score % 5 == 0) {//if score / 10 has a remainder of 0
+
+            
+            numPowerups += 1 //add MORE power-ups (level up!)
+            
         }
         setTimeout(scoreTimer, 1000)
     }
