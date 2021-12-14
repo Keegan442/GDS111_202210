@@ -30,6 +30,10 @@ var asteroidSprite = new Image()
 asteroidSprite.src = "images/asteroid.png"
 asteroidSprite.onload = function(){}
 
+var invincibleSprite = new Image()
+invincibleSprite.src = "images/ShipInvincible.png"
+invincibleSprite.onload = function(){}
+
 
 //random value generator function
 function randomRange(high, low) {
@@ -44,7 +48,7 @@ function Asteroid() {
     this.radius = randomRange(10, 25)
     this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width
     this.y = randomRange(c.height - this.radius, 0 + this.radius) //- c.height
-    this.vx = randomRange(-5, -10) //horizontal velocity
+    this.vx = randomRange(-3, -5) //horizontal velocity
     this.vy = randomRange(10, 5) //vertical velocity
     this.color = "orange"
 
@@ -71,9 +75,9 @@ function PowerUp() {
     this.radius = randomRange(8, 8)
     this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width
     this.y = randomRange(c.height - this.radius, 0 + this.radius) //- c.height
-    this.vx = randomRange(-4, -5) //horizontal velocity
+    this.vx = randomRange(-2, -3) //horizontal velocity
     this.vy = randomRange(10, 5) //vertical velocity
-    this.color = "orange"
+    this.color = "yellow"
 
     this.draw = function () {
         context.save()
@@ -158,23 +162,33 @@ function PlayerShip() {
         
         }
 
-        context.fillStyle = "red" //ship color
-        
-        /*context.beginPath()
+        if(invincible == false){
+            context.fillStyle = "red" //ship color
+            
+            /*context.beginPath()
 
-        context.fillStyle = "blue"
-        context.moveTo(0, -13)
-        context.lineTo(-26, -25)
-        context.lineTo(-26, 1)
-        context.lineTo(0, -13)
-        context.closePath()
-        context.fill()
-        context.restore()*/
-        context.drawImage(shipSprite, -20, -20, 40, 40)
-        console.log("shipSprite drawImage()")
-        
-        context.restore()
-
+            context.fillStyle = "blue"
+            context.moveTo(0, -13)
+            context.lineTo(-26, -25)
+            context.lineTo(-26, 1)
+            context.lineTo(0, -13)
+            context.closePath()
+            context.fill()
+            context.restore()*/
+            context.drawImage(shipSprite, -20, -20, 40, 40)
+            console.log("shipSprite drawImage()")
+            
+            context.restore()
+        }
+        else{
+            context.fillStyle = "red" //ship color
+            
+       
+            context.drawImage(invincibleSprite, -20, -20, 40, 40)
+            console.log("shipSprite drawImage()")
+            
+            context.restore()
+        }
     }
 
     this.move = function () {
@@ -328,6 +342,7 @@ gameStates[1] = function() {//GAMEPLAY STATE
     }
 
     if(invincible == true){
+        
 
         setTimeout(function(){
             invincible = false
