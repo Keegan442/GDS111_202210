@@ -34,6 +34,10 @@ var invincibleSprite = new Image()
 invincibleSprite.src = "images/ShipInvincible.png"
 invincibleSprite.onload = function(){}
 
+var titleSprite = new Image()
+titleSprite.src = "images/TitleScreen.png"
+titleSprite.onload = function(){}
+
 
 //random value generator function
 function randomRange(high, low) {
@@ -304,13 +308,18 @@ function keyPressUp(e) {
 
 gameStates[0] = function() {//START SCREEN
     context.save()
-    context.font = "30px Arial"
+    context.fillStyle = "black"
+    context.drawImage(titleSprite, 0, 0, 800, 600)
+    console.log("shipSprite drawImage()")
+        
+    context.restore()
+    /*context.font = "30px Arial"
     context.fillStyle = "white"
     context.textAlign = "center"
     context.fillText("Asteroid Avoidance", c.width/2, c.height/2 - 30)
     context.font = "15px Arial"
     context.fillText("Press ENTER to Start!", c.width/2, c.height/2 + 30)
-    context.restore()
+    context.restore()*/
 }
 
 gameStates[1] = function() {//GAMEPLAY STATE
@@ -384,9 +393,8 @@ gameStates[1] = function() {//GAMEPLAY STATE
             console.log("WORKS!!!")
             invincible = true
             if(invincible == true){
-                if(invincible == true){
-                    setInterval(TimeInterval, 5000)
-                 }
+                
+                setTimeout(TimeInterval, 5000)
                  
             }
              //this replaces removeEventListener need
@@ -481,6 +489,7 @@ function scoreTimer() {
 function TimeInterval() {
     
     invincible = false
+    clearTimeout()
 
 }
 
