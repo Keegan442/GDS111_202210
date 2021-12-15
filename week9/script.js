@@ -70,6 +70,7 @@ function Asteroid() {
 }//Asteroids() CLOSE
 
 //function for the power-up
+
 function PowerUp() {
 
     this.radius = randomRange(8, 8)
@@ -94,7 +95,8 @@ function PowerUp() {
         context.restore()*/
     }
 
-}//Asteroids() CLOSE
+}//PowerUp() CLOSE
+
 
 
 function gameStart() {
@@ -341,16 +343,6 @@ gameStates[1] = function() {//GAMEPLAY STATE
         ship.vy = 0
     }
 
-    if(invincible == true){
-        
-
-        setTimeout(function(){
-            invincible = false
-        }, 5000)
-
-    }
-
-
     for(var i = 0; i < asteroids.length; i++) {
         //using the distance formula to find the distance between ship and asteroid
         var dX = ship.x - asteroids[i].x
@@ -387,10 +379,16 @@ gameStates[1] = function() {//GAMEPLAY STATE
         var dist = Math.sqrt((dX*dX) + (dY*dY))
 
         //check for collision and if so end game
-        if(detectCollision(dist, (ship.h/2 + powerUps[i].radius))) {
+        if(detectCollision(dist, (ship.h/2 + powerUps[i].radius)) && invincible == false) {
             //console.log("secret stuff for W9D2")
             console.log("WORKS!!!")
             invincible = true
+            if(invincible == true){
+                if(invincible == true){
+                    setInterval(TimeInterval, 5000)
+                 }
+                 
+            }
              //this replaces removeEventListener need
 
             //document.removeEventListener("keydown", keyPressDown)
@@ -409,7 +407,9 @@ gameStates[1] = function() {//GAMEPLAY STATE
         }
         if(invincible == false){
             powerUps[i].draw()
+        
         }
+
         
     }
 
@@ -477,6 +477,12 @@ function scoreTimer() {
     }
 
 }//scoreTimer() CLOSE
+
+function TimeInterval() {
+    
+    invincible = false
+
+}
 
 //scoreTimer()
 
