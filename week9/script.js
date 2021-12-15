@@ -38,6 +38,10 @@ var titleSprite = new Image()
 titleSprite.src = "images/BG3.png"
 titleSprite.onload = function(){}
 
+var endSprite = new Image()
+endSprite.src = "images/GameOver.png"
+endSprite.onload = function(){}
+
 
 //random value generator function
 function randomRange(high, low) {
@@ -52,7 +56,7 @@ function Asteroid() {
     this.radius = randomRange(10, 25)
     this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width
     this.y = randomRange(c.height - this.radius, 0 + this.radius) //- c.height
-    this.vx = randomRange(-3, -5) //horizontal velocity
+    this.vx = randomRange(-5, -8) //horizontal velocity
     this.vy = randomRange(10, 5) //vertical velocity
     this.color = "orange"
 
@@ -440,12 +444,18 @@ gameStates[1] = function() {//GAMEPLAY STATE
 
 gameStates[2] = function() {//GAME OVER STATE
     context.save()
-    context.font = "30px Arial"
-    context.fillStyle = "white"
+    context.fillStyle = "black"
+    context.drawImage(endSprite, 0, 0, 800, 600)
+        
+    context.restore()
+    
+    context.save()
+    context.font = "bold 50px Arial"
+    context.strokeStyle = "White"
+    context.fillStyle = "red"
     context.textAlign = "center"
-    context.fillText("GAME OVER Your score was: " + score.toString(), c.width/2, c.height/2 - 30)
-    context.font = "15px Arial"
-    context.fillText("Press ENTER to Play Again!", c.width/2, c.height/2 + 30)
+    context.strokeText(" " + score.toString(), 548, 340)
+    context.fillText(" " + score.toString(), 548, 340)
     context.restore()
 
 }
@@ -474,7 +484,7 @@ function scoreTimer() {
             numAsteroids += 15 //add MORE asteroids (level up!)
             console.log(numAsteroids)
         }
-        if(score % 5 == 0) {//if score / 10 has a remainder of 0
+        if(score % 10 == 0) {//if score / 10 has a remainder of 0
 
             
             numPowerups += 1 //add MORE power-ups (level up!)
@@ -492,7 +502,7 @@ function TimeInterval() {
 
 }
 
-//scoreTimer()
+
 
 function detectCollision(distance, calcDistance) {
     return distance < calcDistance //will return TRUE or FALSE value
