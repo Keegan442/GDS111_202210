@@ -35,7 +35,7 @@ invincibleSprite.src = "images/ShipInvincible.png"
 invincibleSprite.onload = function(){}
 
 var titleSprite = new Image()
-titleSprite.src = "images/TitleScreen.png"
+titleSprite.src = "images/BG3.png"
 titleSprite.onload = function(){}
 
 
@@ -310,7 +310,6 @@ gameStates[0] = function() {//START SCREEN
     context.save()
     context.fillStyle = "black"
     context.drawImage(titleSprite, 0, 0, 800, 600)
-    console.log("shipSprite drawImage()")
         
     context.restore()
     /*context.font = "30px Arial"
