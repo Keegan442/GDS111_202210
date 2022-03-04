@@ -43,7 +43,7 @@ var playerData ={
 		//The walk animation
 		walk:
 		{
-			fps:1,
+			fps:5,
 			cycle:true,
 			frames:
 			[
@@ -80,7 +80,7 @@ var playerData ={
 		//The attack animation 
 		attack:
 		{
-			fps:3,
+			fps:1,
 			cycle:false,
 			//width:300,
 			frames:
