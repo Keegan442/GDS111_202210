@@ -5,7 +5,7 @@ This file contains all of the code for the Main Menu
 var startButton = new GameObject({width: 128, height: 128}).makeSprite(buttonData)
 
 var menuBackground = new GameObject();
-menuBackground.img.src = "images/mrt.jpg"
+menuBackground.img.src = "images/titlescreen.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 

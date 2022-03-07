@@ -12,11 +12,11 @@ wiz.force=1
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
-sky.img.src="images/mrt.jpg"
+sky.img.src="images/nightsky.png"
 
 //The ground
 var ground = new GameObject({width:canvas.width*10, height:64,y:canvas.height-32, color:"green"})
-ground.img.src="images/mrt.jpg"
+ground.img.src="images/dirt3.png"
 
 
 //A platform
@@ -62,14 +62,14 @@ levelItems.add([caveBack.grid, ground, plat, cave.grid]);
 
 //background
 var bg = new GameObject({x:level.x,y:level.y, width:canvas.width*4, height:canvas.height})
-bg.img.src=`images/bgfull.png`
+bg.img.src=`images/clouds.png`
 
 var clouds = new GameObject({x:level.x,y:level.y})
-clouds.img.src=`images/mrt.jpg`
+clouds.img.src=`images/grass.jpg`
 
 //farbackground
 var rbg = new GameObject({x:level.x, y:level.y, width:1024, height:512})
-rbg.img.src=`images/hills.png`
+rbg.img.src=`images/darkhills.png`
 
 /*------------------vvBULLET STUFFvv----------------------*/
 
