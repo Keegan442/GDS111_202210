@@ -4,11 +4,15 @@
 var gravity = 1;
 var friction = {x:.85,y:.97}
 
+
+
 var stage = new GameObject({width:canvas.width, height:canvas.height});
 
 //Avatar
 var wiz = new GameObject({width:78, height:93, spriteData:playerData}).makeSprite(playerData)
 wiz.force=1
+
+var fireball = new GameObject({wdith:96, height:96, spriteData:fireballData})
 
 //Very back background
 var sky = new GameObject({width:canvas.width, height:canvas.height, color:"cyan"})
@@ -20,7 +24,8 @@ ground.img.src="images/dirt3.png"
 
 
 //A platform
-var plat = new GameObject({width:256, height:64,y:canvas.height-200, color:"green"})
+var plat = new GameObject({width:256, height:64,y:canvas.height-200})
+plat.img.src="images/plat2.png"
 
 //A level object when it is moved other objects move with it.
 var level = new GameObject({x:0,y:0});
@@ -47,7 +52,7 @@ g1.add([ground,leftBorder, caveHit.grid])
 
 //Used to draw the rectangles
 var rects = new Group();
-rects.add([ground,plat])
+rects.add([ground, plat])
 
 //used to render the sprites
 var sprites = new Group();
@@ -81,11 +86,11 @@ var currentBullet = 0;
 
 for(let i=0; i<100; i++)
 {
-	bullets[i] = new GameObject({width:64, height:64})
-	//bullets[i].img.src="images/mrt.jpg"
-	bullets[i].makeSprite(playerData)
+	bullets[i] = new GameObject({width:96, height:96})
+	//bullets[i].img.src="images/fireball.png"
+	bullets[i].makeSprite(fireballData)
 	bullets[i].y=-10000
-	bullets[i].changeState(`walk`)
+	bullets[i].changeState(`idle`)
 }
 
 //console.log(bullets)
@@ -141,7 +146,7 @@ gameStates[`level1`] = function()
 		wiz.canJump = false;
 		wiz.vy = wiz.jumpHeight;
 		wiz.changeState(`jump`)
-		//sounds.play(`splode`,1)
+		sounds.play(`jump`)
 	}
 	shotTimer--;
 	if(shotTimer <=0)
@@ -163,11 +168,11 @@ gameStates[`level1`] = function()
 
 			bullets[currentBullet].vx = 5*wiz.dir;
 			bullets[currentBullet].world = level;
-			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 96) ;
-			bullets[currentBullet].y = wiz.y + 20;
+			bullets[currentBullet].x = wiz.x-level.x + (wiz.dir * 39) ;
+			bullets[currentBullet].y = wiz.y + 15;
 			bullets[currentBullet].dir = wiz.dir;
 			
-			sounds.play(`splode`)
+			sounds.play(`fireball`)
 
 			currentBullet++;
 			if(currentBullet>=bullets.length)
@@ -247,21 +252,28 @@ gameStates[`level1`] = function()
 		rbg.x=0; 
 	}
 
+	
+
 	sky.drawStaticImage();
 	
 	var groundPattern = context.createPattern(ground.img, 'repeat')
 	ground.color = groundPattern
 
+
 	rbg.drawStaticImage([0,0]);
 	rbg.drawStaticImage([-rbg.width,0]);
 	rbg.drawStaticImage([rbg.width,0]);
 	bg.drawStaticImage([0,0]);
+
+	
+
+	
 	
 	
 	//rbg.render(`drawStaticImage`, [0,0])
 
 	rects.render(`drawRect`)
-	
+	plat.drawStaticImage();
 
 	/*context.beginPath()
 	context.moveTo(0,wiz.bottom.y)
@@ -273,17 +285,17 @@ gameStates[`level1`] = function()
 	
 	for(let i=0; i<bullets.length; i++)
 	{
-		if(bullets[i].overlap(stage)) bullets[i].vy+=1;
+		//if(bullets[i].overlap(stage)) bullets[i].vy+=1;
 		bullets[i].move()
 		bullets[i].play(function(){return}).drawSprite()
 		//bullets[i].angle+=10
-		while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
+		/*while(g1.collide(bullets[i].bottom) && bullets[i].vy>=0)
 		{
 			
 			bullets[i].vy=0;
 			bullets[i].y--;
 			
-		}
+		}*/
 	}
 
 	

@@ -1,6 +1,6 @@
 var buttonData = {
     info: {
-        src: 'images/SanctusAll.png'
+        src: 'images/playbutton.png'
     },
     states: {
         idle:{
@@ -8,7 +8,7 @@ var buttonData = {
             cycle: false,
             frames:
             [
-                {width:78, height:93, startX:78 * 5, startY:0}
+                {width:300, height:300, startX:0, startY:0}
             ]
         },
         hover:{
@@ -16,7 +16,7 @@ var buttonData = {
             cycle: false,
             frames:
             [
-                {width:78, height:93, startX:0, startY:0}
+                {width:300, height:300, startX:300, startY:0}
             ]
         }
     }
