@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W1 Demo</title>
+    <style>
+
+        div
+        {
+            padding:20px;
+            margin:20px;
+        }
+        #simpson
+        {
+            background-color: orange;
+        }
+        #bundy
+        {
+            background-color: hotpink;
+        }
+        #tanners
+        {
+            background-color: tan;
+        }
+        .dad{font-weight:bold;}
+        .mom{font-style:italic;}
+        .parent{font-size:32px;}
+        .boy{color:black;}
+        .girl{color:white;}
+        .kid{font-size:18px;}
+        .son:hover::after{content:' (son)';}
+        .daughter:hover::after{content:' (daughter)';}
+        .baby{text-decoration: underline;}
+
+        a
+        {
+            font-family:Arial;
+        }
+        a:link, a:visited, a:active
+        {
+            color:black;
+        }
+        a:hover
+        {
+            color:blueviolet;
+        }
+
+        .hide
+        {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">All</a>
+        <a href="#">Simpson</a>
+        <a href="#">Bundy</a>
+        <a href="#">Tanner</a>
+    </nav>
+
+    <div id="simpson">
+        <p class="dad boy parent">Homer</p>
+        <p class="mom girl parent">Marge</p>
+        <p class="son boy kid">Bart</p>
+        <p class="daughter girl kid">Lisa</p>
+        <p class="daughter girl kid baby">Maggie</p>
+    </div>
+
+    <div id="bundy">
+        <p class="dad boy parent">Al</p>
+        <p class="mom girl parent">Peggy</p>
+        <p class="son boy kid">Bud</p>
+        <p class="daughter girl kid">Kelly</p>
+    </div>
+
+    <div id="tanners">
+        <p class="dad boy parent">Danny</p>
+        <p class="daughter girl kid">DJ</p>
+        <p class="daughter girl kid">Stephanie</p>
+        <p class="daughter girl kid baby">Michelle</p>
+    </div>
+
+    <script>
+        var simpson = document.querySelector('#simpson');
+        var bundy = document.querySelector('#bundy');
+        var tanner = document.querySelector('#tanners');
+
+        var links = document.querySelectorAll('a');
+        
+        links[0].addEventListener('click', function(e){show(simpson, true)});
+        links[1].addEventListener('click', function(e){show(simpson)});
+        links[2].addEventListener('click', function(e){show(bundy)});
+        links[3].addEventListener('click', function(e){show(tanner)});
+
+        function show(family, all=false)
+        {
+            simpson.classList.add('hide');
+            bundy.classList.add('hide');
+            tanner.classList.add('hide');
+
+            if(all === true)
+            {
+                simpson.classList.remove('hide');
+                bundy.classList.remove('hide');
+                tanner.classList.remove('hide');
+
+                return
+            }
+
+            family.classList.remove('hide');
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

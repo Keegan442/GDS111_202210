@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keegan Preston - Bio</title>
+    <style>
+        body
+        {
+            background-color: rgba(226, 200, 162, 0.608);
+        }
+
+        .name
+        {
+            color:rgb(196, 33, 33);
+        }
+
+        .header
+        {
+            color:rgb(80, 126, 111);
+        }
+
+        .hide
+        {
+            display:none;
+        }
+
+        #me
+        {
+            height:300px;
+            width:280px;
+        }
+
+        #skate
+        {
+            height:300px;
+            width:500px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1 class="name">
+        Keegan Preston
+    </h1>
+
+    <hr>
+
+    <div id="nav">
+        <a href="#">Bio</a>
+        <a href="#">Education</a>
+        <a href="#">Hobbies</a>
+    </div>
+
+    <hr>
+
+    <div id="main">
+
+
+        <div id="bio">
+            <h2 class="header">My Bio</h2>
+
+            <img src="images/me.jpg" id="me" alt="Me!">
+
+            <p>Hi! I'm <b>Keegan Preston</b>! I'm an aspiring software engineer and I'm currently studying at <strong>New England Institute of Technology</strong>. I like skateboarding, playing guitar, hanging out with friends, and more! This is my test bio page. If you would like to learn more about me, feel free to look around at my <i>education</i> and my <i>hobbies</i>. Have fun and <em>Thank you!</em></p>
+
+            <hr>
+        </div>
+
+        <div id="ed">
+            <h2 class="header">Schooling</h2>
+
+            <ul>
+                <li>Gilles-Sweet Elementary</li>
+                <li>Broad Rock Middle</li>
+                <li>Curtis Corner Middle</li>
+                <li>South Kingstown High School</li>
+                <li><a target="_blank" href="https://www.neit.edu/academics/information-technology?ctcampaign=7834&ctkwd=technology%20masters%20programs&ctcreative=545780897668&ctplacement=&ctadpos=&ctmatch=b&ctlocid=9002233&cttrgtid=kwd-319579541&ctfeedid=&ctnwk=g&ctdevice=c&gclid=Cj0KCQjw-fmZBhDtARIsAH6H8qiya8AljRFvTxJvxxrEHEJS3gQB4T7Os6gtbEaxFPvPfpw0-xdX4gsaAu3aEALw_wcB">New England Institute of Technology (Currently)</a></li>
+            </ul>
+
+            <hr>
+        </div>
+
+        <div id="hobbies">
+            <h2 class="header">Intrests</h2>
+
+            <ol>
+                <li>Skateboarding</li>
+                <li>Guitar</li>
+                <li>Friends</li>
+                <li>Movies</li>
+                <li>Music</li>
+                <li>Programming</li>
+
+                <img src="images/skate.jpg" id="skate">
+            </ol>
+
+            <hr>
+        </div>
+
+        <div id="footer">
+            ©2020 Keegan Preston | W1 Assignment
+        </div>
+    </div>
+
+    <script>
+        var bio = document.querySelector('#bio');
+        var edu = document.querySelector('#ed');
+        var hob = document.querySelector('#hobbies');
+
+        var links = document.querySelectorAll('a');
+        
+        links[0].addEventListener('click', function(e){show(bio)});
+        links[1].addEventListener('click', function(e){show(edu)});
+        links[2].addEventListener('click', function(e){show(hob)});
+
+        function show(page, all=false)
+        {
+            bio.classList.add('hide');
+            edu.classList.add('hide');
+            hob.classList.add('hide');
+
+            if(all === true)
+            {
+                bio.classList.remove('hide');
+                edu.classList.remove('hide');
+                hob.classList.remove('hide');
+
+                return
+            }
+
+            page.classList.remove('hide');
+
+        }
+    </script>
+
+</body>
+</html>
