@@ -1,0 +1,109 @@
+body
+{
+    background-color: rgba(255, 255, 255, 0.608);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container
+{
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: rgba(209, 209, 209, 0.608);
+    padding: 20px;
+}
+
+.name
+{
+    background-color: rgba(159, 157, 157, 0.608); ;
+    color:rgb(218, 8, 8);
+    border: 3px solid black;
+    border-radius: 2px 2px 2px 2px;
+    font-weight: bolder;
+    margin: auto;
+    text-align: center;
+    width: 20%;
+    padding: 10px;
+}
+
+#nav
+{
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+}
+
+a:link, a:visited
+{
+    text-decoration: none;
+    background-color: #aeacac;
+    color: #000000;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+a:hover
+{
+    text-decoration: none;
+    background-color: #e4dfdf;
+    color: #000000;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+.header
+{
+    color:rgb(0, 0, 0);
+}
+
+.hide
+{
+    display:none;
+}
+
+#me
+{
+    height:300px;
+    width:280px;
+}
+
+#skate
+{
+    height:300px;
+    width:500px;
+}
+
+#header
+{
+    border-bottom: 1px solid black;
+}
+
+#navbar
+{
+    border-bottom: 1px solid black;
+}
+
+#bio
+{
+    border-bottom: 1px solid black;
+}
+
+#ed
+{
+    border-bottom: 1px solid black;
+}
+
+#hobbies
+{
+    border-bottom: 1px solid black;
+}
+
+#footer
+{
+    text-align: center;
+}

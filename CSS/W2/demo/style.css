@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+html{height:100%}
+body
+{
+    background-color:aqua;
+    background-image:url(https://t3.ftcdn.net/jpg/02/79/05/18/360_F_279051882_eh8garW76Qzgdxyq0BwPLJBy49s5maoG.jpg);
+    background-size:2000px;
+    background-repeat:no-repeat;
+    background-position: 400px;
+    background: rgb(2,0,36);
+    background: linear-gradient(71deg, rgba(2,0,36,1) 0%, rgba(154,11,98,1) 0%, rgba(0,212,255,1) 100%);
+
+}
+
+p
+{
+    color:red;
+}
+
+div p
+{
+    color:green;
+}
+
+p:first-child
+{
+    font-size:36px;
+}   
+
+div
+{
+    border:5px solid black;
+}
