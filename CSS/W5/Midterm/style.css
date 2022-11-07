@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@300&family=Rock+Salt&family=Teko&display=swap');
+
+body
+{
+    background-color:black;
+}
+
+#container
+{
+    background-color:#282828;
+    margin-top:20px;
+    margin-bottom:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:white;
+    height:760px;
+    width: 1500px;
+    display: grid;
+    grid-template-areas: 
+
+        "header header header header header"
+        "banner banner banner banner side"
+        "info1 info1 info2 info2 side"
+        "info1 info1 info2 info2 side"
+    ;
+    /*grid-template: 
+    [header-left] "a a b" / 25% 25% 50% [header-right]
+    [main-left] "c d b" / 25% 25% 50% [main-right]
+    [footer-left] "c d b" / 25% 25% 50% [footer-right];*/
+}
+
+
+#header
+{
+    color:#BB0908;
+    font-family:'Teko', sans-serif;
+    font-size: 25px;
+    grid-area: header;
+    height: 30px;
+}
+
+#socials
+{
+    float:right;
+    font-size: 40px;
+    color: red;
+}
+
+#banner
+{
+    height: 350px;
+    width: 1170px;
+    grid-area: banner;
+    margin-left: 5px;
+}
+
+#anniversary
+{
+    background-color:#393939;
+    height:380px;
+    width:570px;
+    grid-area: info1;
+    padding:5px;
+    font-size: 12px;
+    display:flex;
+    font-family: 'Poppins', arial;
+}
+
+#ann-header
+{
+    color: #FF1D29;
+    font-family: 'Rock Salt', arial;
+    font-size: 22px;
+    border-bottom: solid #FF1D29 2px;
+    width: 240px;
+    margin-left: 20px;
+}
+
+#content
+{
+    display:flex;
+    flex-direction:column;
+    margin-left:20px;
+}
+
+#bottom-content
+{
+    display:flex;
+    flex-direction: row;
+}
+
+#sale
+{
+    display:flex;
+    flex-direction:column;
+    margin-left: 10px;
+}
+
+#price
+{
+    font-size: 50px;
+    font-family:'Teko', arial;
+    text-decoration: underline;
+}
+
+a
+{
+    color: #22C1CB;
+}
+
+#poster
+{
+    height: 370px;
+    width: 250px;
+}
+
+#dvd
+{
+    height: 150px;
+    width: 100px;
+}
+
+#pennant
+{
+    height: 200px;
+    width: 550px;
+}
+
+#sign
+{
+    height: 250px;
+    width: 280px;
+}
+
+#water
+{
+    height: 150px;
+    width: 280px;
+    margin-left: 10px;
+}
+
+#camp-crystal
+{
+    background-color:#393939;
+    height:380px;
+    width:570px;
+    grid-area: info2;
+    padding:5px;
+    font-family: 'Poppins', arial;
+}
+
+#timeline
+{
+    background-color:#393939;
+    width:300px;
+    height: 750px;
+    grid-area: side;
+    padding:5px;
+    font-family: 'Roboto', arial;
+}
+
+em
+{
+    color: #FC0303;
+    font-style: normal;
+}
+
+#footer
+{
+    color:white;
+}
