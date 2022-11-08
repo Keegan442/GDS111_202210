@@ -1,0 +1,67 @@
+html, body{
+    margin:0;
+    height:100vh;
+    font-size: 1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+thead{
+    background-color: darkslategray;
+    color: white;
+}
+.half
+{
+    visibility: collapse;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 139, 139, 0.203);
+}
+table{
+    width:80%;
+    border-collapse: collapse;
+}
+td{
+    border-bottom:1px solid black;
+}
+h1{
+    font-size: 1.5em;
+    text-decoration: underline;
+}
+@media screen and (max-width: 1000px)
+{
+    .full
+    {
+        display:none;
+    }
+    .half
+    {
+        visibility: visible;
+    }
+}
+@media screen and (max-width: 500px)
+{
+    .stat
+    {
+        display:none;
+    }
+}
+@media screen and (max-width: 500px)
+{
+    h1
+    {
+        font-size: 2em;
+        transition: 0.4s;
+    }
+    thead
+    {
+        font-size: 1.5em;
+        transition: 0.4s;
+    }
+    tbody
+    {
+        font-size: 1.25em;
+        transition: 0.4s;
+    }
+}
