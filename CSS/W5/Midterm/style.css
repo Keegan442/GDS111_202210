@@ -37,6 +37,9 @@ body
     font-size: 25px;
     grid-area: header;
     height: 30px;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
 }
 
 #socials
@@ -44,6 +47,8 @@ body
     float:right;
     font-size: 40px;
     color: red;
+    margin-left: 1150px;
+    padding-top: 8px;
 }
 
 #banner
