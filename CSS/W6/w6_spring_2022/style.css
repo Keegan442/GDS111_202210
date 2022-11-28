@@ -1,0 +1,178 @@
+html, body{
+    margin:0;
+    height:100%;
+}
+body{
+    box-sizing:border-box;
+    display:flex;
+    justify-content: center;
+    align-items: stretch;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+main{
+    width:100%;
+    background-color: rgb(111, 111, 111);
+    display:flex;
+    flex-direction: column;
+}
+header{
+    background-color: rgb(111, 111, 111);
+    height:24px;
+    margin-left:45px;
+    color:rgb(255, 255, 255);
+}
+#file{
+    color:rgb(225, 223, 223);
+}
+#file:hover{
+    color:white;
+}
+#edit{
+    padding-left:10px;
+    color:rgb(225, 223, 223);
+}
+#edit:hover{
+    color:white;
+}
+#help{
+    padding-left:10px;
+    color:rgb(225, 223, 223);
+}
+#help:hover{
+    color:white;
+}
+#title{
+    padding-left:550px;
+}
+#gear{
+    float:right;
+    padding-right:10px;
+    padding-top:2px;
+    color:rgb(225, 223, 223);
+}
+#gear:hover{
+    color:white;
+}
+section{
+    height:100%;
+    background-color:burlywood;
+    display:flex;
+    justify-content: flex-start;
+}
+aside{
+    width:50px;
+    background-color:rgb(111, 111, 111);
+    display:flex;
+    flex-direction: column;
+}
+nav{
+
+    width:160px;
+    background-color:rgb(83, 83, 83);
+    color: white;
+    transition:width 1s;
+    display:flex;
+    justify-content: flex-start;
+    overflow:hidden;
+}
+#files{
+    display:flex;
+    flex-direction: column;
+    background-color:rgb(83, 83, 83);
+}
+#tray{
+    color:rgb(225, 223, 223);
+    font-size:30px;
+    margin-left:6px;
+}
+#tray:hover{
+    color:white;
+}
+#grid{
+    color:rgb(225, 223, 223);
+    font-size:30px;
+    margin-left:7px;
+    margin-top:10px;
+}
+#grid:hover{
+    color:white;
+}
+#trash{
+    color:rgb(225, 223, 223);
+    font-size:30px;
+    margin-left:7px;
+    margin-top:600px;
+}
+#trash:hover{
+    color:white;
+}
+#x{
+    float:right;
+    padding-right:5px;
+}
+details{
+    margin:5px;
+    width:150px;
+}
+ul{
+    list-style-type: none;
+    color: rgb(225, 223, 223);
+}
+li:hover{
+    color:white;
+}
+summary{
+    width:90px;
+}
+#content{
+    width:100%;
+    background-color:rgb(255, 179, 255);
+    display:flex;
+    flex-direction: column;
+}
+    #tabs{
+        background-color: black;
+        display:flex;
+    }
+        #tabs a{
+            width:160px;
+            height:30px;
+            display:inline-block;
+            color:white;
+            text-decoration:none;
+            padding-top:10px;
+            padding-left:5px;
+        }
+        #tabs a:link, #tabs a:visited{
+            background-color:rgb(162, 158, 158);
+        }
+        #tabs a:hover, #tabs a:active{
+            background-color: rgb(68, 68, 68);
+        }
+    #breadcrumbs{
+        background-color: rgb(68, 68, 68);
+        color:white;
+    }
+    textarea{
+        resize:none;
+        width:100%;
+        height:100%;
+        box-sizing: border-box;
+        border:none;
+        outline:none;
+        background-color:black;
+        color:white;
+    }
+footer{
+    height:16px;
+    background-color:rgb(60, 60, 236);
+    color:white;
+    padding-left:20px;
+}
+
+.hidden{
+    width:0;
+    padding:0;
+    transition:width 1s;
+}
