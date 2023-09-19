@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone | Companion Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/dc880f6620.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-color: rgb(239, 238, 238);
+        }
+        h2, h3{
+            color:rgb(91, 91, 217)
+        }
+        .smallPage{
+            display: none;
+        }
+        @media (max-width: 800px){
+            h2{
+                font-size: 1.8em;
+            }
+            h3{
+                font-size: 1.5em;
+            }
+            .smallPage{
+                display:unset;
+            }
+            .regPage{
+                display: none;
+            }
+
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="regPage">
+        <div id="container" class="container-fluid">
+            <div id="header" class="container-fluid bg-secondary bg-opacity-50 position-relative" style="height:65px;">
+
+                <div class="row">
+                    <div class="col-9 ps-4 mt-2 regHeader"><h2 onclick="home()" onmouseover="pointCursor()" onmouseleave="defCursor()"><b>BasicTies | </b>Companion Site</h2></div>
+                    <ul class="nav col-3 navs">
+                        <li class="nav-item"><div class="mt-2"><a class="nav-link" href="featured.html">Developers</a></div></li>
+                        <li class="nav-item"><div class="mt-2"><a class="nav-link" href="projects.html">Project Parts</a></div></li>
+                    </ul>
+                </div>
+                
+            </div><!--header-->
+
+            <div id="featured" class="container-fluid bg-secondary bg-opacity-25 pb-2">
+                <div class="row">
+                    <img class="mt-2 col-9 featImg" style="height:350px; width:900px;" src="images/title.PNG">
+
+                    <div class="mt-2 ms-5 col-3">
+                        <h3><b>About BasicTies</b></h3>
+                        <hr>
+                        <p class="ms-4" style="font-size:20px;">A basic social media website for desktop and mobile that prioritizes user information security and freedom from advertisements.</p>
+                        <a class="ms-4 link" href="files/basicsocial.zip">Download Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about" class="container-fluid">
+                <div class="row">
+                    <div class="col-3">
+                        <img style="height:280px; width:260px;" src="images/neit.jpg">
+                    </div>
+
+                    <div class="col-5">
+                        <h3 class=""><b>About Us</b></h3>
+                        <hr>
+                        <p class="" style="font-size:20px;">This project was created by Keegan Preston and Daniel Knight. We made this social media website as our Capstone Project for New England Institute of Technology. Our goal for the project was a social media website that was free from advertisements and secure. We also just wanted to see if we could do it with the skills we've learned so far.</p>
+                    </div>
+
+                    <div class="ms-5 ps-5 col-3">
+                        <h3><b>Repo</b></h3>
+                        <hr>
+                        <div class="row">
+                            <a class="link col" href="https://github.com/DocKnight86/BasicSocial" target="_blank"> Capstone Project Repo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer" class="container-fluid bg-secondary bg-opacity-50 mt-2 pt-2" style="height:35px;">
+                <div class="row">
+                    <h6 class="col-11">©2022 Keegan Preston & Daniel Knight</h6>
+                </div>
+            </div>
+        </div><!--container-->
+    </div>
+</body>
+</html>
